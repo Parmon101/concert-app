@@ -1,0 +1,29 @@
+.root {
+    display: flex;
+    background: #000;
+    justify-items: center;
+    align-items: center;
+    
+    .end {
+        position: relative;
+        margin: auto;
+        left: 225px;
+        .Btn{
+            background: #FFF;
+            color: #000;
+            font-weight: 600;
+            font-size: 14px;
+            margin: 0 12px;
+            height: 40px;
+            padding: 11px 40px;
+        }
+    }
+}
+
+.title {
+    margin: 10px 61px ;
+    color: #FFF;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 60px;
+}
