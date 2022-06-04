@@ -1,6 +1,11 @@
+.ticket {
+    margin-top: 30px;
+}
 .cards {
+    margin-top: 15px;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    overflow-x: auto;
 }
 
 .buyText {
@@ -8,4 +13,10 @@
     font-size: 35px;
     line-height: 40px;
     color: #000;
+}
+
+.splitBlock{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
 }

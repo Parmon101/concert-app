@@ -1,0 +1,65 @@
+.cardInfo {
+    margin-top: 36px;
+    border: 1px solid black;
+    .table {
+        border: solid thin;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    .table caption {
+        padding-bottom: 0.5em;
+    }
+    .name {
+        font-weight: 500;
+        font-size: 35px;
+        line-height: 40px;
+    }
+    .textItem {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 17px;
+        padding: 18px;
+    }
+    .table th,
+    .table td {
+        border: solid thin;
+        padding: 0.5rem 2rem;
+    }
+    .table td {
+        white-space: nowrap;
+    }
+    .table td {
+        border-style: none solid;
+        vertical-align: top;
+    }
+    .table th {
+        padding: 0.2em;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    .table tbody td:first-child::after {
+        content: leader('. ');
+    }
+
+    body {
+        padding: 1rem;
+    }
+    .posts {
+        h1 {
+            margin-left: 53px;
+        }
+
+        margin-top: 25px;
+        border-top: 1px solid black;
+        padding: 15px;
+
+        .splitBlock {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-row-gap: 10px;
+            justify-items: center;
+        }
+    }
+}

@@ -1,15 +1,15 @@
 .home {
     margin: 0 61px;
+
     .splitBlock {
+        margin-top: 40px;
         display: flex;
         width: 98%;
         height: 100px;
         justify-content: center;
-    
-        div{
+
+        div {
             width: 100%;
         }
     }
 }
-
-

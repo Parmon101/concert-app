@@ -7,7 +7,7 @@
     .end {
         position: relative;
         margin: auto;
-        left: 225px;
+        left: 125px;
         .Btn{
             background: #FFF;
             color: #000;
@@ -16,6 +16,13 @@
             margin: 0 12px;
             height: 40px;
             padding: 11px 40px;
+
+            &:hover{
+                opacity: 0.7;
+            }
+            &:active {
+                opacity: 0.9;
+            }
         }
     }
 }
