@@ -11,9 +11,18 @@ export const goodApi = createApi({
             query: (idUser = '') => `posts${`/${idUser}`}`,
         }),
         getComments: build.query({
-            query: (limit = '') => `comments${`?_limit=${limit}`}`,
+            // query: (limit = '') => `comments${`?_limit=${limit}`}`,
+            query: (idUser = '') => `posts${`/${idUser}/comments`}`,
+        }),
+        addComment: build.mutation({
+            query: (body) => ({
+                url: 'posts',
+                method: 'POST',
+                body,
+            }),
         }),
     }),
 });
 
-export const { useGetUsersQuery, useGetPostsQuery, useGetCommentsQuery } = goodApi;
+export const { useGetUsersQuery, useGetPostsQuery, useGetCommentsQuery, useAddCommentMutation } =
+    goodApi;

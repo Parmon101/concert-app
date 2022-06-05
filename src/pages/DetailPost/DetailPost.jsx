@@ -1,13 +1,37 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { useGetCommentsQuery, useGetUsersQuery } from '../../redux/goodApi';
+import { useAddCommentMutation, useGetCommentsQuery, useGetUsersQuery } from '../../redux/goodApi';
 import styles from './detailPost.scss';
 import { Popup } from './Popup/popup';
 
 export const DetailPost = ({ posts }) => {
     const { idPost, id } = useParams();
+    const [newCommentName, setNewCommentName] = React.useState('');
+    const [newCommentEmail, setNewCommentEmail] = React.useState('');
+    const [newCommentBody, setNewCommentBody] = React.useState('');
     const { data: dataUser = [] } = useGetUsersQuery(id);
-    const { data: dataComments = [], isLoading } = useGetCommentsQuery(3);
+    const { data: dataComments = [], isLoading } = useGetCommentsQuery(idPost);
+
+    const [addComment, { isError }] = useAddCommentMutation();
+
+    console.log(newCommentName);
+
+    const handleAddComment = async () => {
+        if (newCommentName) {
+            await addComment({
+                name: newCommentName,
+                email: newCommentEmail,
+                body: newCommentBody,
+            }).unwrap();
+        }
+        setNewCommentName('');
+        setNewCommentEmail('');
+        setNewCommentBody('');
+        setIsOpen(!isOpen);
+        alert(
+            `отправлены данные: имя - ${newCommentName} email - ${newCommentEmail} текст - ${newCommentBody}`,
+        );
+    };
 
     const [isOpen, setIsOpen] = React.useState(false);
     const togglePopup = () => {
@@ -44,16 +68,26 @@ export const DetailPost = ({ posts }) => {
                         handleclose={togglePopup}
                         content={
                             <>
-                                <h2>попап</h2>
-                                <form>
-                                    имя
-                                    <input type="text" />
-                                    имейл
-                                    <input type="text" />
-                                    текст
-                                    <input type="text" />
-                                    <button>отправить</button>
-                                </form>
+                                <h2>Добавить комментарий</h2>
+                                имя
+                                <input
+                                    type="text"
+                                    value={newCommentName}
+                                    onChange={(e) => setNewCommentName(e.target.value)}
+                                />
+                                имейл
+                                <input
+                                    type="text"
+                                    value={newCommentEmail}
+                                    onChange={(e) => setNewCommentEmail(e.target.value)}
+                                />
+                                текст
+                                <input
+                                    type="text"
+                                    value={newCommentBody}
+                                    onChange={(e) => setNewCommentBody(e.target.value)}
+                                />
+                                <button onClick={handleAddComment}>отправить</button>
                             </>
                         }
                     />
