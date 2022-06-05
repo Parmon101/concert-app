@@ -6,7 +6,7 @@ export const PostCard = ({ data, user }) => {
     return (
         <div>
             <div className={styles.postCard}>
-                <Link to={'detailPost'}>
+                <Link to={`/cardInfo/${user.id}/detailPost/${data.id}`}>
                     <div className={styles.splitBlock}>
                         <div>{user.name}</div>
                         <div>time</div>

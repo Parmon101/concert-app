@@ -28,8 +28,8 @@ function App() {
                 <Route path="/" element={<Home users={users} />} />
                 <Route path="cardInfo/:id" element={<CardInfo posts={posts} />} />
                 <Route
-                    path="cardInfo/:id/detailPost"
-                    element={<DetailPost commentList={comments} />}
+                    path="cardInfo/:id/detailPost/:idPost"
+                    element={<DetailPost commentList={comments} posts={posts} />}
                 />
             </Routes>
         </div>

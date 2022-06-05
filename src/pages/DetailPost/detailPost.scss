@@ -2,33 +2,32 @@
     border: 1px solid black;
     border-radius: 0 0 5px 5px;
     padding: 0 55px 0;
-}
+    .container {
+        border: 2px solid #dedede;
+        background-color: #f1f1f1;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px 0;
+    }
 
-.container {
-    border: 2px solid #dedede;
-    background-color: #f1f1f1;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 10px 0;
-}
+    .darker {
+        border-color: #ccc;
+        background-color: #ddd;
+    }
 
-.darker {
-    border-color: #ccc;
-    background-color: #ddd;
-}
+    .container::after {
+        content: '';
+        clear: both;
+        display: table;
+    }
 
-.container::after {
-    content: '';
-    clear: both;
-    display: table;
-}
+    .time-right {
+        float: right;
+        color: #aaa;
+    }
 
-.time-right {
-    float: right;
-    color: #aaa;
-}
-
-.time-left {
-    float: left;
-    color: #999;
+    .time-left {
+        float: left;
+        color: #999;
+    }
 }

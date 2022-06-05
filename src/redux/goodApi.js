@@ -8,7 +8,7 @@ export const goodApi = createApi({
             query: (id = '') => `users${`/${id}`}`,
         }),
         getPosts: build.query({
-            query: () => 'posts',
+            query: (idUser = '') => `posts${`/${idUser}`}`,
         }),
         getComments: build.query({
             query: (limit = '') => `comments${`?_limit=${limit}`}`,
