@@ -15,12 +15,8 @@ export const Home = ({ users }) => {
                     <Ticket />
                 </div>
                 <div className={styles.splitBlock}>
-                    <div>
-                        <Info />
-                    </div>
-                    <div>
-                        <SendForm />
-                    </div>
+                    <div>{/* <Info /> */}</div>
+                    <div>{/* <SendForm /> */}</div>
                 </div>
             </div>
         </>
